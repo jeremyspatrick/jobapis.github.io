@@ -5,7 +5,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="https://jobapis.github.io/"/>
-  <updated>2016-10-19T02:19:51.000Z</updated>
+  <updated>2016-10-29T19:18:49.000Z</updated>
   <id>https://jobapis.github.io/</id>
   
   <author>
@@ -16,11 +16,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Jobinventory RSS Feed Provider Released</title>
+    <link href="https://jobapis.github.io/2016/10/29/jobinventory/"/>
+    <id>https://jobapis.github.io/2016/10/29/jobinventory/</id>
+    <published>2016-10-29T19:12:55.000Z</published>
+    <updated>2016-10-29T19:18:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>While most of the job board clients supported by <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common</a> are for job boards with full-service APIs, Jobinventory only provides an XML RSS feed for consumption. Today we released our first version of the PHP RSS client for Jobinventory, and you can download it <a href="https://github.com/jobapis/jobs-jobinventory" target="_blank" rel="external">here on Github</a>.</p>
+<p>Use of the Jobinventory provider follows much the same pattern as our other job board providers.</p>
+<p>First, create a Query object:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\JobinventoryQuery([</div><div class="line">    <span class="string">'q'</span> =&gt; <span class="string">'engineering'</span>,</div><div class="line">    <span class="string">'l'</span> =&gt; <span class="string">'Chicago, IL'</span>,</div><div class="line">    <span class="string">'limit'</span> =&gt; <span class="string">'100'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><em>For a full list of supported query options, <a href="https://github.com/jobapis/jobs-jobinventory/blob/master/src/Queries/JobinventoryQuery.php" target="_blank" rel="external">see this file</a>.</em></p>
+<p>And inject it into the <code>JobinventoryProvider</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\JobinventoryProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
+<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-jobinventory#usage" target="_blank" rel="external">this project’s readme</a>, and as always, feel free to contact us if you have any questions or comments.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;While most of the job board clients supported by &lt;a href=&quot;https://github.com/jobapis/jobs-common&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Jobs Com
+    
+    </summary>
+    
+    
+      <category term="releases" scheme="https://jobapis.github.io/tags/releases/"/>
+    
+      <category term="clients" scheme="https://jobapis.github.io/tags/clients/"/>
+    
+      <category term="jobinventory" scheme="https://jobapis.github.io/tags/jobinventory/"/>
+    
+      <category term="rss" scheme="https://jobapis.github.io/tags/rss/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Adzuna Job Board Api Client Released</title>
     <link href="https://jobapis.github.io/2016/10/18/adzuna-jobs-provider/"/>
     <id>https://jobapis.github.io/2016/10/18/adzuna-jobs-provider/</id>
     <published>2016-10-19T02:13:55.000Z</published>
-    <updated>2016-10-19T02:19:51.000Z</updated>
+    <updated>2016-10-29T19:18:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>Our latest PHP job board client is for <a href="https://github.com/jobapis/jobs-adzuna" target="_blank" rel="external">Adzuna</a> a largely European job board with a private API for registered partners. You can <a href="https://developer.adzuna.com/admin" target="_blank" rel="external">register to use Adzuna’s API here</a>, and get started using this API client by including the package in your project’s composer file:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-adzuna</div></pre></td></tr></table></figure>
@@ -43,7 +77,7 @@
     
       <category term="clients" scheme="https://jobapis.github.io/tags/clients/"/>
     
-      <category term="careercast" scheme="https://jobapis.github.io/tags/careercast/"/>
+      <category term="adzuna" scheme="https://jobapis.github.io/tags/adzuna/"/>
     
   </entry>
   
@@ -310,32 +344,6 @@
       <category term="releases" scheme="https://jobapis.github.io/tags/releases/"/>
     
       <category term="jobs-common" scheme="https://jobapis.github.io/tags/jobs-common/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>What&#39;s this?</title>
-    <link href="https://jobapis.github.io/2016/08/21/whats-this/"/>
-    <id>https://jobapis.github.io/2016/08/21/whats-this/</id>
-    <published>2016-08-21T05:00:00.000Z</published>
-    <updated>2016-10-10T12:58:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>A few years ago I started working on a website to help entry level job<br>seekers find employment. In doing so, I discovered that job board data<br>was hard to find and job board APIs weren’t in any way standardized.</p>
-<p>This prompted me to start an open source project to help developers <a href="http://www.karllhughes.com/2015/job-board-api-1-release/" target="_blank" rel="external">access<br>job board APIs</a>,<br>and now, a year later, I’ve decided to double down on that effort. As such,<br>this site will be the new home for my job board standardization project<br>as well as other related open source projects.</p>
-<h2 id="So-what-is-JobApis"><a href="#So-what-is-JobApis" class="headerlink" title="So what is JobApis?"></a>So what is JobApis?</h2><p>JobApis is all about helping you access job board and company data faster<br>and more easily. On this site, I’ll post updates to the job board API clients<br>that <a href="https://www.karllhughes.com/2015/job-board-api-clients-update/" target="_blank" rel="external">Steven Maguire and I first released in 2015</a>,<br>helpful “how-tos” for developers hoping to use the projects, and any other<br>updates that seem relevant to this audience.</p>
-<p>JobApis is currently just me, but it’s open to the community. If you want<br>to get involved by contributing to one of our open source projects or<br>whatever else, <a href="/contact">contact me</a>.</p>
-<h2 id="Who-am-I"><a href="#Who-am-I" class="headerlink" title="Who am I?"></a>Who am I?</h2><p>My name is Karl and I’m a software engineer with a soft spot for PHP.<br>I live in the Chicago area and am currently in charge of our engineering<br>efforts at <a href="http://www.thegraidenetwork.com" target="_blank" rel="external">The Graide Network</a>.</p>
-<p><a href="http://www.karllhughes.com" target="_blank" rel="external">My website</a> - <a href="http://twitter.com/karllhughes" target="_blank" rel="external">Twitter</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;A few years ago I started working on a website to help entry level job&lt;br&gt;seekers find employment. In doing so, I discovered that job boa
-    
-    </summary>
-    
-    
-      <category term="announcements" scheme="https://jobapis.github.io/tags/announcements/"/>
     
   </entry>
   
