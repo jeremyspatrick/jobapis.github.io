@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="JobApis"/>
+        <meta property="og:title" content="JobsToMail User Login and Filtering Recruiter Listings"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -46,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives: 2016 - JobApis</title>
+    <title>JobsToMail User Login and Filtering Recruiter Listings - JobApis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -144,68 +144,82 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-color: #F58532;/*background-image: url('https://i.imgur.com/fn7238d.png')*/">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016</h1>
+                <div class="post-heading">
+                    <h1>JobsToMail User Login and Filtering Recruiter Listings</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-11-01
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/releases/">#releases</a> <a href="/tags/announcements/">#announcements</a> <a href="/tags/jobs-to-mail/">#jobs-to-mail</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/09/03/jobs-common-v2-release/">
-        <h1 class="post-title archive">
-            Jobs Common Version 2 Release
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-            Posted by Karl Hughes on
-        
-        2016-09-03
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/08/21/whats-this/">
-        <h1 class="post-title archive">
-            What's this?
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-            Posted by Karl Hughes on
-        
-        2016-08-21
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2016/">&larr;  Newer Posts</a></li>
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Tonight we released a basic token-based user login functionality on <a href="https://www.jobstomail.com/" target="_blank" rel="external">JobsToMail</a> which allows users to log in and see their current searches as well as add new ones to their user account. We also released our first premium feature that allows users to filter out recruiters. This feature is currently only open to users who request access by emailing <a href="mailto:upgrade@jobstomail.com" target="_blank" rel="external">upgrade@jobstomail.com</a>.</p>
+<p>Both of thesse features are among several that will go into the <a href="https://github.com/jobapis/jobs-to-mail/milestone/1" target="_blank" rel="external">version 1.0 release of JobsToMail</a> expected sometime in the beginning of 2017. More details on each feature are below.</p>
+<h2 id="Token-based-user-login"><a href="#Token-based-user-login" class="headerlink" title="Token-based user login"></a>Token-based user login</h2><p>Token-based logins (also known as “passwordless” logins) have trade-offs. On one hand, they can be more secure and help ensure that users don’t share accounts or use weak passwords. On the other hand, they are slightly more difficult to use, although that point is arguable. With passwordless logins, a user does not have to remember or type a password, but she does have to have access to her email address. <a href="http://notes.xoxco.com/post/27999787765/is-it-time-for-password-less-login" target="_blank" rel="external">Here’s a good blog post on the reasons for going passwordless</a>.</p>
+<h3 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h3><p>The basic flow for our token-based login is as follows:</p>
+<h4 id="1-Click-Login-and-enter-email"><a href="#1-Click-Login-and-enter-email" class="headerlink" title="1. Click Login and enter email"></a>1. Click <code>Login</code> and enter email</h4><h4 id="2-Check-email-account-for-the-token"><a href="#2-Check-email-account-for-the-token" class="headerlink" title="2. Check email account for the token"></a>2. Check email account for the token</h4><h4 id="3-Enter-your-token-OR-click-the-link-in-the-email"><a href="#3-Enter-your-token-OR-click-the-link-in-the-email" class="headerlink" title="3. Enter your token OR click the link in the email"></a>3. Enter your token OR click the link in the email</h4><h4 id="4-You-will-be-immediately-logged-in"><a href="#4-You-will-be-immediately-logged-in" class="headerlink" title="4. You will be immediately logged in"></a>4. You will be immediately logged in</h4><h3 id="Notes-about-token-based-login-on-JobsToMail-com"><a href="#Notes-about-token-based-login-on-JobsToMail-com" class="headerlink" title="Notes about token-based login on JobsToMail.com"></a>Notes about token-based login on JobsToMail.com</h3><ul>
+<li>Our tokens expire in 7 days. If you don’t use the token by that time you will have to generate a new one to log in.</li>
+<li>Tokens are only good for <strong>one time use</strong>. This means you can’t share your token with others.</li>
+<li>Tokens use the same construct as the confirmation links we send when new users sign up. This means that new users when confirmed are automatically logged in so they can explore their searches immediately.</li>
+<li>If you have any issues, feel free to report them on <a href="https://github.com/jobapis/jobs-to-mail/issues" target="_blank" rel="external">github</a> or <a href="mailto:khughes.me@gmail.com" target="_blank" rel="external">email me directly</a>.</li>
 </ul>
+<h2 id="Filtering-recruiter-posts"><a href="#Filtering-recruiter-posts" class="headerlink" title="Filtering recruiter posts"></a>Filtering recruiter posts</h2><p>This feature has been requested by several of our users who are recruiters, but it takes more work to maintain than the basic functionality of JobsToMail. We are still building a list of recruiting firms and improving the filtering mechanism, so expect this feature to improve greatly, and we’re looking for testers in new locations.</p>
+<p>If you’d like to try out the recruiter filter, please email <a href="mailto:upgrade@jobstomail.com" target="_blank" rel="external">upgrade@jobstomail.com</a>.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
 
     <!-- Footer -->

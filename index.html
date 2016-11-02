@@ -166,6 +166,40 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
                 <div class="post-preview">
+    <a href="/2016/11/01/jobs-to-mail-login/">
+        <h2 class="post-title">
+            JobsToMail User Login and Filtering Recruiter Listings
+        </h2>
+        
+    </a>
+    <p class="post-meta">
+        <!-- Date and Author -->
+        
+        2016-11-01
+    </p>
+    <!-- Post Main Content -->
+    <div>
+        <p>Tonight we released a basic token-based user login functionality on <a href="https://www.jobstomail.com/" target="_blank" rel="external">JobsToMail</a> which allows users to log in and see their current searches as well as add new ones to their user account. We also released our first premium feature that allows users to filter out recruiters. This feature is currently only open to users who request access by emailing <a href="mailto:upgrade@jobstomail.com" target="_blank" rel="external">upgrade@jobstomail.com</a>.</p>
+<p>Both of thesse features are among several that will go into the <a href="https://github.com/jobapis/jobs-to-mail/milestone/1" target="_blank" rel="external">version 1.0 release of JobsToMail</a> expected sometime in the beginning of 2017. More details on each feature are below.</p>
+<h2 id="Token-based-user-login"><a href="#Token-based-user-login" class="headerlink" title="Token-based user login"></a>Token-based user login</h2><p>Token-based logins (also known as “passwordless” logins) have trade-offs. On one hand, they can be more secure and help ensure that users don’t share accounts or use weak passwords. On the other hand, they are slightly more difficult to use, although that point is arguable. With passwordless logins, a user does not have to remember or type a password, but she does have to have access to her email address. <a href="http://notes.xoxco.com/post/27999787765/is-it-time-for-password-less-login" target="_blank" rel="external">Here’s a good blog post on the reasons for going passwordless</a>.</p>
+<h3 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h3><p>The basic flow for our token-based login is as follows:</p>
+<h4 id="1-Click-Login-and-enter-email"><a href="#1-Click-Login-and-enter-email" class="headerlink" title="1. Click Login and enter email"></a>1. Click <code>Login</code> and enter email</h4><h4 id="2-Check-email-account-for-the-token"><a href="#2-Check-email-account-for-the-token" class="headerlink" title="2. Check email account for the token"></a>2. Check email account for the token</h4><h4 id="3-Enter-your-token-OR-click-the-link-in-the-email"><a href="#3-Enter-your-token-OR-click-the-link-in-the-email" class="headerlink" title="3. Enter your token OR click the link in the email"></a>3. Enter your token OR click the link in the email</h4><h4 id="4-You-will-be-immediately-logged-in"><a href="#4-You-will-be-immediately-logged-in" class="headerlink" title="4. You will be immediately logged in"></a>4. You will be immediately logged in</h4><h3 id="Notes-about-token-based-login-on-JobsToMail-com"><a href="#Notes-about-token-based-login-on-JobsToMail-com" class="headerlink" title="Notes about token-based login on JobsToMail.com"></a>Notes about token-based login on JobsToMail.com</h3><ul>
+<li>Our tokens expire in 7 days. If you don’t use the token by that time you will have to generate a new one to log in.</li>
+<li>Tokens are only good for <strong>one time use</strong>. This means you can’t share your token with others.</li>
+<li>Tokens use the same construct as the confirmation links we send when new users sign up. This means that new users when confirmed are automatically logged in so they can explore their searches immediately.</li>
+<li>If you have any issues, feel free to report them on <a href="https://github.com/jobapis/jobs-to-mail/issues" target="_blank" rel="external">github</a> or <a href="mailto:khughes.me@gmail.com" target="_blank" rel="external">email me directly</a>.</li>
+</ul>
+<h2 id="Filtering-recruiter-posts"><a href="#Filtering-recruiter-posts" class="headerlink" title="Filtering recruiter posts"></a>Filtering recruiter posts</h2><p>This feature has been requested by several of our users who are recruiters, but it takes more work to maintain than the basic functionality of JobsToMail. We are still building a list of recruiting firms and improving the filtering mechanism, so expect this feature to improve greatly, and we’re looking for testers in new locations.</p>
+<p>If you’d like to try out the recruiter filter, please email <a href="mailto:upgrade@jobstomail.com" target="_blank" rel="external">upgrade@jobstomail.com</a>.</p>
+
+
+        
+    </div>
+</div>
+<hr>
+
+            
+                <div class="post-preview">
     <a href="/2016/10/29/jobinventory/">
         <h2 class="post-title">
             Jobinventory RSS Feed Provider Released
@@ -426,53 +460,6 @@
 <h3 id="3-Inject-the-query-object-and-get-jobs"><a href="#3-Inject-the-query-object-and-get-jobs" class="headerlink" title="3. Inject the query object and get jobs"></a>3. Inject the query object and get jobs</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\GithubProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
 <p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
 <p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-github#usage" target="_blank" rel="external">this project’s readme</a></p>
-
-
-        
-    </div>
-</div>
-<hr>
-
-            
-                <div class="post-preview">
-    <a href="/2016/09/03/jobs-common-v2-release/">
-        <h2 class="post-title">
-            Jobs Common Version 2 Release
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-            Posted by Karl Hughes on
-        
-        2016-09-03
-    </p>
-    <!-- Post Main Content -->
-    <div>
-        <p>For the past year or so I’ve been meaning to invest the time in a version 2 of the <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common</a> package, and I finally got around to releasing it this morning.</p>
-<h2 id="What’s-new-in-version-2"><a href="#What’s-new-in-version-2" class="headerlink" title="What’s new in version 2?"></a>What’s new in version 2?</h2><p>Most of the improvements are internal. My goal was to make creating a new provider faster and easier while allowing maximum flexibility for unique parameters or response objects. Basically, this means that it’s now easier to create a new client with Jobs Common.</p>
-<ul>
-<li><strong>New AbstractQuery object</strong> - In version 1, attributes were set directly on the Provider class (eg: <code>$provider-&gt;setKeyword(&#39;engineer&#39;);</code>. In version 2, you set attributes on a new Query class and then inject that into the Provider. The AbstractQuery handles most of the heavy lifting; you just have to add all the attributes from the API and fill in a couple abstract methods.</li>
-<li><strong>AbstractProvider handles parsing responses</strong> - With the new AbstractQuery, the Provider is now primarily responsible for handling the response from the API. It basically checks that the Query is valid and uses it to make a call (still using Guzzle), then parses the response. As such, the abstract method signatures have changed here.</li>
-<li><strong>Concrete classes in a “/fixtures” folder for testing</strong> - Another improvement in version 2 is the inclusion of two Concrete classes intended to demonstrate creating a new Client and improve testability of the abstract classes.</li>
-</ul>
-<h2 id="Which-providers-are-using-version-2"><a href="#Which-providers-are-using-version-2" class="headerlink" title="Which providers are using version 2?"></a>Which providers are using version 2?</h2><p>Currently we have updated the most popular providers to use jobs-common version 2:</p>
-<ul>
-<li><a href="/open-source/indeed/">Indeed</a></li>
-<li><a href="/open-source/govt/">Government Jobs</a></li>
-<li><a href="/open-source/dice/">Dice</a></li>
-<li><a href="/open-source/careerbuilder/">Careerbuilder</a></li>
-</ul>
-<p>My plan is to release a new provider every 1-2 weeks until I’ve got them all running on v2.</p>
-<h2 id="Other-announcements"><a href="#Other-announcements" class="headerlink" title="Other announcements"></a>Other announcements</h2><h4 id="SimplyHired-API-indefinitely-shut-down"><a href="#SimplyHired-API-indefinitely-shut-down" class="headerlink" title="SimplyHired API indefinitely shut down"></a>SimplyHired API indefinitely shut down</h4><p><a href="https://techcrunch.com/2016/05/31/simply-hired-is-shutting-down-june-26-reportedly-as-part-of-an-acquisition/" target="_blank" rel="external">SimplyHired was sold this summer</a>, and it looks like they’ve <a href="http://www.simplyhired.com/about/publishers" target="_blank" rel="external">shut off their API indefinitely</a>. Until I hear that it’s back up, I’m discontinuing support for the <a href="https://github.com/jobapis/jobs-simplyhired" target="_blank" rel="external">SimplyHired jobs provider</a>.</p>
-<h4 id="Jobs-Multi-coming-up"><a href="#Jobs-Multi-coming-up" class="headerlink" title="Jobs Multi coming up"></a>Jobs Multi coming up</h4><p>Finally, the next project in the jobs space that I’ll be tackling is an effort at standardizing the input parameters for job board APIs.</p>
-<p>While Jobs Common standardizes the output of job boards using the <a href="https://schema.org/JobPosting" target="_blank" rel="external">schema.org JobPosting standard</a> it makes no attempt at standardizing the input parameters used for each provider. This is intentional. When I first started the project, I tried to do this, but as I’ve used Jobs Common for a couple different use cases now, I’ve realized that it was not appropriate.</p>
-<p>So, the Jobs Common package and each Provider will remain useful as independent packages, and Jobs Multi will make it easy to access each job board using standard language.</p>
-<p>I don’t have many specifics yet as I’m just starting to plan for this, but my guess will be that the external API will allow for things like:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$allJobs = <span class="keyword">new</span> Multi();</div><div class="line"></div><div class="line">$providers = [</div><div class="line">    <span class="string">'Indeed'</span>,</div><div class="line">    <span class="string">'Dice'</span>,</div><div class="line">    <span class="string">'Careerbuilder'</span>,</div><div class="line">];</div><div class="line"></div><div class="line">$results = $allJobs-&gt;setKeyword(<span class="string">'sales'</span>)</div><div class="line">    -&gt;setLocation(<span class="string">'Memphis, TN'</span>)</div><div class="line">    -&gt;setProviders()</div><div class="line">    -&gt;perPage(<span class="string">'100'</span>);</div></pre></td></tr></table></figure>
-<p>Because the goal will be to standardize inputs that aren’t always equivalent, there will be some opining in this package that may or may not be appreciated by users. I get it, and I’d welcome contributions or alternative solutions to this problem.</p>
-<p>That’s all for this week. Looking forward to getting more quality open source jobs software out soon!</p>
 
 
         
