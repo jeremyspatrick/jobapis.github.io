@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="JobApis"/>
+        <meta property="og:title" content="Careerjet Jobs Provider Released"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -46,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>releases - JobApis</title>
+    <title>Careerjet Jobs Provider Released - JobApis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -144,168 +144,79 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-color: #F58532;/*background-image: url('https://i.imgur.com/fn7238d.png')*/">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#releases</h1>
+                <div class="post-heading">
+                    <h1>Careerjet Jobs Provider Released</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-11-09
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/releases/">#releases</a> <a href="/tags/clients/">#clients</a> <a href="/tags/careerjet/">#careerjet</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/11/09/careerjet-client/">
-        <h1 class="post-title archive">
-            Careerjet Jobs Provider Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-09
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/11/01/jobs-to-mail-login/">
-        <h1 class="post-title archive">
-            JobsToMail User Login and Filtering Recruiter Listings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-01
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Today we released the <a href="https://github.com/jobapis/jobs-careerjet" target="_blank" rel="external">first version of a Careerjet job board API client</a> using <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common v2</a>. Jobs Multi support will be released later this week as well.</p>
+<p>To install the package, add it to your project’s composer file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-careerjet</div></pre></td></tr></table></figure>
+<p>As with all <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common</a> providers, you just need to create a Query:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\CareerjetQuery([</div><div class="line">    <span class="string">'keywords'</span> =&gt; <span class="string">'engineering'</span>,</div><div class="line">    <span class="string">'location'</span> =&gt; <span class="string">'Chicago, IL'</span>,</div><div class="line">    <span class="string">'page'</span> =&gt; <span class="string">'1'</span>,</div><div class="line">    <span class="string">'affid'</span> =&gt; YOUR_AFFILIATE_ID,</div><div class="line">]);</div></pre></td></tr></table></figure>
+<p>And inject it into the <code>CareerjetProvider</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\CareerjetProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
+<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-careerjet#usage" target="_blank" rel="external">this project’s readme</a>, and as always, feel free to contact us if you’d like to get involved.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/10/29/jobinventory/">
-        <h1 class="post-title archive">
-            Jobinventory RSS Feed Provider Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-29
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/10/18/adzuna-jobs-provider/">
-        <h1 class="post-title archive">
-            Adzuna Job Board Api Client Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-18
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/10/09/ziprecruiter-job-search-api/">
-        <h1 class="post-title archive">
-            Ziprecruiter Job Search Client v1.0 Release
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-09
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/10/03/juju-jobs/">
-        <h1 class="post-title archive">
-            Juju job board API client now available in Jobs Common v2
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/25/jobs-to-mail/">
-        <h1 class="post-title archive">
-            Announcing JobsToMail, Our First Job Search Product
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-25
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/22/careercast-jobs-api/">
-        <h1 class="post-title archive">
-            CareerCast API v1.0 Release Announcement
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-22
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/17/usajobs-api/">
-        <h1 class="post-title archive">
-            USAJobs API Client now available
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/09/11/querying-multiple-job-boards/">
-        <h1 class="post-title archive">
-            Querying multiple job board APIs at once
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-09-11
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/tags/releases/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
 
     <!-- Footer -->

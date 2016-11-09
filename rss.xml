@@ -5,7 +5,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="https://jobapis.github.io/"/>
-  <updated>2016-11-02T02:39:23.000Z</updated>
+  <updated>2016-11-09T23:46:35.000Z</updated>
   <id>https://jobapis.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Careerjet Jobs Provider Released</title>
+    <link href="https://jobapis.github.io/2016/11/09/careerjet-client/"/>
+    <id>https://jobapis.github.io/2016/11/09/careerjet-client/</id>
+    <published>2016-11-09T23:39:47.000Z</published>
+    <updated>2016-11-09T23:46:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Today we released the <a href="https://github.com/jobapis/jobs-careerjet" target="_blank" rel="external">first version of a Careerjet job board API client</a> using <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common v2</a>. Jobs Multi support will be released later this week as well.</p>
+<p>To install the package, add it to your project’s composer file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-careerjet</div></pre></td></tr></table></figure>
+<p>As with all <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common</a> providers, you just need to create a Query:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\CareerjetQuery([</div><div class="line">    <span class="string">'keywords'</span> =&gt; <span class="string">'engineering'</span>,</div><div class="line">    <span class="string">'location'</span> =&gt; <span class="string">'Chicago, IL'</span>,</div><div class="line">    <span class="string">'page'</span> =&gt; <span class="string">'1'</span>,</div><div class="line">    <span class="string">'affid'</span> =&gt; YOUR_AFFILIATE_ID,</div><div class="line">]);</div></pre></td></tr></table></figure>
+<p>And inject it into the <code>CareerjetProvider</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\CareerjetProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
+<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-careerjet#usage" target="_blank" rel="external">this project’s readme</a>, and as always, feel free to contact us if you’d like to get involved.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Today we released the &lt;a href=&quot;https://github.com/jobapis/jobs-careerjet&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;first version of a Careerjet job
+    
+    </summary>
+    
+    
+      <category term="releases" scheme="https://jobapis.github.io/tags/releases/"/>
+    
+      <category term="clients" scheme="https://jobapis.github.io/tags/clients/"/>
+    
+      <category term="careerjet" scheme="https://jobapis.github.io/tags/careerjet/"/>
+    
+  </entry>
   
   <entry>
     <title>JobsToMail User Login and Filtering Recruiter Listings</title>
@@ -308,37 +341,6 @@
       <category term="releases" scheme="https://jobapis.github.io/tags/releases/"/>
     
       <category term="jobs-multi" scheme="https://jobapis.github.io/tags/jobs-multi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Github Jobs now available in Jobs Common v2</title>
-    <link href="https://jobapis.github.io/2016/09/07/github-jobs/"/>
-    <id>https://jobapis.github.io/2016/09/07/github-jobs/</id>
-    <published>2016-09-08T01:52:03.000Z</published>
-    <updated>2016-10-10T12:58:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>The <a href="https://github.com/jobapis/jobs-github" target="_blank" rel="external">Github Jobs API provider</a> has hit a version 1.0 release, which is now compatible with <a href="http://www.jobapis.com/2016/09/03/jobs-common-v2-release/" target="_blank" rel="external">Jobs Common v2</a>.</p>
-<p>If you’re not sure what that means, basically it just means you can access jobs from Github’s job board as described below.</p>
-<h3 id="1-Install-the-package-via-Composer"><a href="#1-Install-the-package-via-Composer" class="headerlink" title="1. Install the package via Composer"></a>1. Install the package via Composer</h3><p><code>composer require jobapis/jobs-github</code></p>
-<h3 id="2-Create-a-query-object-with-all-API-parameters"><a href="#2-Create-a-query-object-with-all-API-parameters" class="headerlink" title="2. Create a query object with all API parameters"></a>2. Create a query object with all API parameters</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\GithubQuery([</div><div class="line">    <span class="string">'search'</span> =&gt; <span class="string">'engineering'</span>,</div><div class="line">    <span class="string">'location'</span> =&gt; <span class="string">'chicago'</span>,</div><div class="line">    <span class="string">'page'</span> =&gt; <span class="string">'1'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure>
-<h3 id="3-Inject-the-query-object-and-get-jobs"><a href="#3-Inject-the-query-object-and-get-jobs" class="headerlink" title="3. Inject the query object and get jobs"></a>3. Inject the query object and get jobs</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\GithubProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
-<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
-<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-github#usage" target="_blank" rel="external">this project’s readme</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;The &lt;a href=&quot;https://github.com/jobapis/jobs-github&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github Jobs API provider&lt;/a&gt; has hit a version 1.0 re
-    
-    </summary>
-    
-    
-      <category term="releases" scheme="https://jobapis.github.io/tags/releases/"/>
-    
-      <category term="clients" scheme="https://jobapis.github.io/tags/clients/"/>
-    
-      <category term="github" scheme="https://jobapis.github.io/tags/github/"/>
     
   </entry>
   
