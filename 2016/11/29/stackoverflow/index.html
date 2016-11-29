@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="JobApis"/>
+        <meta property="og:title" content="Stack Overflow Job Board Client"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -46,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2016/11 - JobApis</title>
+    <title>Stack Overflow Job Board Client - JobApis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -144,88 +144,77 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-color: #F58532;/*background-image: url('https://i.imgur.com/fn7238d.png')*/">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2016/11</h1>
+                <div class="post-heading">
+                    <h1>Stack Overflow Job Board Client</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-11-29
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/releases/">#releases</a> <a href="/tags/clients/">#clients</a> <a href="/tags/rss/">#rss</a> <a href="/tags/stack-overflow/">#stack overflow</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/11/29/stackoverflow/">
-        <h1 class="post-title archive">
-            Stack Overflow Job Board Client
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-29
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/11/15/ieee-job-board-client/">
-        <h1 class="post-title archive">
-            IEEE JobSite Client Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-15
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Stack Overflow is widely recognized for being one of the best Q&amp;A sites for developers. This package makes it easy to access <a href="https://stackoverflow.com/jobs" target="_blank" rel="external">their job listings</a> via the site’s RSS feed and the <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common</a> project. Use of this package is similar to most other packages supported by Jobs Common:</p>
+<p>First, create a Query object:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\StackoverflowQuery([</div><div class="line">    <span class="string">'q'</span> =&gt; <span class="string">'engineering'</span>,</div><div class="line">    <span class="string">'l'</span> =&gt; <span class="string">'Chicago, IL'</span>,</div><div class="line">    <span class="string">'pg'</span> =&gt; <span class="string">'2'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+<p><em>For a full list of supported query options, <a href="https://github.com/jobapis/jobs-stackoverflow/blob/master/src/Queries/StackoverflowQuery.php" target="_blank" rel="external">see this file</a>.</em></p>
+<p>And inject it into the <code>StackoverflowProvider</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\StackoverflowProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
+<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-stackoverflow#usage" target="_blank" rel="external">this project’s readme</a>, and as always, feel free to contact us if you have any questions or comments.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/11/09/careerjet-client/">
-        <h1 class="post-title archive">
-            Careerjet Jobs Provider Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-09
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/11/01/jobs-to-mail-login/">
-        <h1 class="post-title archive">
-            JobsToMail User Login and Filtering Recruiter Listings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-01
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
 
     <!-- Footer -->
