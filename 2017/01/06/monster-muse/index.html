@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="JobApis"/>
+        <meta property="og:title" content="Monster.com RSS Client and theMuse.com API Client Released"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -46,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>Archives - JobApis</title>
+    <title>Monster.com RSS Client and theMuse.com API Client Released - JobApis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -144,168 +144,82 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-color: #F58532;/*background-image: url('https://i.imgur.com/fn7238d.png')*/">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>Monster.com RSS Client and theMuse.com API Client Released</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-01-06
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/releases/">#releases</a> <a href="/tags/clients/">#clients</a> <a href="/tags/monster/">#monster</a> <a href="/tags/muse/">#muse</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/01/06/monster-muse/">
-        <h1 class="post-title archive">
-            Monster.com RSS Client and theMuse.com API Client Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-01-06
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2016/12/31/jobs-to-mail-10/">
-        <h1 class="post-title archive">
-            JobsToMail Version 1.0 Release
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-12-31
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="Monster-com-Jobs-RSS-feed-client"><a href="#Monster-com-Jobs-RSS-feed-client" class="headerlink" title="Monster.com Jobs RSS feed client"></a>Monster.com Jobs RSS feed client</h2><p>Monster.com’s official API is closed to most users (they have not responded to multiple requests for access), but their RSS feed provides a small subset of their jobs. Unfortunately, results are only from the past 24 hours, so this client won’t work for all applications. Using the client is pretty much the same as most RSS feed providers we support:</p>
+<h3 id="1-Install-the-package-via-Composer"><a href="#1-Install-the-package-via-Composer" class="headerlink" title="1. Install the package via Composer"></a>1. Install the package via Composer</h3><p><code>composer require jobapis/jobs-monster</code></p>
+<h3 id="2-Create-a-query-object-with-all-API-parameters"><a href="#2-Create-a-query-object-with-all-API-parameters" class="headerlink" title="2. Create a query object with all API parameters"></a>2. Create a query object with all API parameters</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\MonsterQuery([</div><div class="line">    <span class="string">'q'</span> =&gt; <span class="string">'engineering'</span>, <span class="comment">// Keyword</span></div><div class="line">    <span class="string">'where'</span> =&gt; <span class="string">'chicago'</span>, <span class="comment">// Location</span></div><div class="line">    <span class="string">'p'</span> =&gt; <span class="string">'1'</span>, <span class="comment">// Page number</span></div><div class="line">]);</div></pre></td></tr></table></figure>
+<h3 id="3-Inject-the-query-object-and-get-jobs"><a href="#3-Inject-the-query-object-and-get-jobs" class="headerlink" title="3. Inject the query object and get jobs"></a>3. Inject the query object and get jobs</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\MonsterProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
+<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-monster#usage" target="_blank" rel="external">this project’s readme</a></p>
+<h2 id="The-Muse-Jobs-API-client"><a href="#The-Muse-Jobs-API-client" class="headerlink" title="The Muse Jobs API client"></a>The Muse Jobs API client</h2><p>We also re-released our Muse API client with support for Jobs Common v.2 and the Muse’s v.2 of their API. Their API still does not support a true “keyword” search, but the category field allows you to search by types of jobs. Usage is similar to the above client:</p>
+<h3 id="1-Install-the-package-via-Composer-1"><a href="#1-Install-the-package-via-Composer-1" class="headerlink" title="1. Install the package via Composer"></a>1. Install the package via Composer</h3><p><code>composer require jobapis/jobs-muse</code></p>
+<h3 id="2-Create-a-query-object-with-all-API-parameters-1"><a href="#2-Create-a-query-object-with-all-API-parameters-1" class="headerlink" title="2. Create a query object with all API parameters"></a>2. Create a query object with all API parameters</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\MuseQuery([</div><div class="line">    <span class="string">'category'</span> =&gt; <span class="string">'Engineering'</span>,</div><div class="line">    <span class="string">'location'</span> =&gt; <span class="string">'Chicago, IL'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure>
+<h3 id="3-Inject-the-query-object-and-get-jobs-1"><a href="#3-Inject-the-query-object-and-get-jobs-1" class="headerlink" title="3. Inject the query object and get jobs"></a>3. Inject the query object and get jobs</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\MuseProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
+<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-muse#usage" target="_blank" rel="external">this project’s readme</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2016/12/01/jobs-multi-v1/">
-        <h1 class="post-title archive">
-            JobsMulti - the Ultimate Job Board API Client - Version 1.0 Release
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-12-01
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2016/11/29/stackoverflow/">
-        <h1 class="post-title archive">
-            Stack Overflow Job Board Client
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-29
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/11/15/ieee-job-board-client/">
-        <h1 class="post-title archive">
-            IEEE JobSite Client Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-15
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/11/09/careerjet-client/">
-        <h1 class="post-title archive">
-            Careerjet Jobs Provider Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-09
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/11/01/jobs-to-mail-login/">
-        <h1 class="post-title archive">
-            JobsToMail User Login and Filtering Recruiter Listings
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-11-01
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/10/29/jobinventory/">
-        <h1 class="post-title archive">
-            Jobinventory RSS Feed Provider Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-29
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/10/18/adzuna-jobs-provider/">
-        <h1 class="post-title archive">
-            Adzuna Job Board Api Client Released
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-18
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2016/10/09/ziprecruiter-job-search-api/">
-        <h1 class="post-title archive">
-            Ziprecruiter Job Search Client v1.0 Release
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2016-10-09
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
 
     <!-- Footer -->
