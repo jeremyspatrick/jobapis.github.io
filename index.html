@@ -166,6 +166,38 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
                 <div class="post-preview">
+    <a href="/2017/01/17/phpjobs-com/">
+        <h2 class="post-title">
+            PHPJobs.com RSS Client Released
+        </h2>
+        
+    </a>
+    <p class="post-meta">
+        <!-- Date and Author -->
+        
+        2017-01-17
+    </p>
+    <!-- Post Main Content -->
+    <div>
+        <p>We now support PHPJobs.com’s RSS feed of job using the <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common framework</a>. With this client, you can quickly access the job search RSS feed on PHPJobs.com in your projects. Here’s an example of the library in action:</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>Install the package using Composer:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-phpjobs</div></pre></td></tr></table></figure>
+<p>Then create a query object with all the parameters you’d like to use:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Add parameters to the query via the constructor</span></div><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\PhpjobsQuery([</div><div class="line">    <span class="string">'search_string'</span> =&gt; <span class="string">'zend'</span></div><div class="line">]);</div></pre></td></tr></table></figure>
+<p>And inject the query object into the provider:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\CraigslistProvider($query);</div></pre></td></tr></table></figure>
+<p>Finally, call the “getJobs” method to retrieve results:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Get a Collection of Jobs</span></div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>Check out more examples or <a href="https://github.com/jobapis/jobs-phpjobs" target="_blank" rel="external">contribute to the project on Github</a>.</p>
+
+
+        
+    </div>
+</div>
+<hr>
+
+            
+                <div class="post-preview">
     <a href="/2017/01/12/craigslist/">
         <h2 class="post-title">
             Craigslist Jobs RSS Feed Client for PHP
@@ -181,7 +213,7 @@
     <div>
         <p>Today we released our 17th job board client using version 2.0 of the <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common framework</a>, a Craigslist job search RSS feed client. Using this client, you can quickly access the job search RSS feed on Craigslist in your PHP projects. Here’s an example of the library in action:</p>
 <h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>Install the package using Composer:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-monster</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-craigslist</div></pre></td></tr></table></figure>
 <p>Then create a query object with all the parameters you’d like to use:</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Add parameters to the query via the constructor</span></div><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\CraigslistQuery([</div><div class="line">    <span class="string">'location'</span> =&gt; <span class="string">'chicago'</span>,    <span class="comment">// Craigslist location. Full list of locations here: https://sites.google.com/site/clsiteinfo/city-site-code-sort</span></div><div class="line">    <span class="string">'query'</span> =&gt; <span class="string">'sales'</span>,         <span class="comment">// Search query</span></div><div class="line">    <span class="string">'s'</span> =&gt; <span class="string">'100'</span>,               <span class="comment">// Offset results</span></div><div class="line">]);</div></pre></td></tr></table></figure>
 <p>And inject the query object into the provider:</p>
@@ -443,36 +475,6 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\JobinventoryProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
 <p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
 <p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-jobinventory#usage" target="_blank" rel="external">this project’s readme</a>, and as always, feel free to contact us if you have any questions or comments.</p>
-
-
-        
-    </div>
-</div>
-<hr>
-
-            
-                <div class="post-preview">
-    <a href="/2016/10/18/adzuna-jobs-provider/">
-        <h2 class="post-title">
-            Adzuna Job Board Api Client Released
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-10-18
-    </p>
-    <!-- Post Main Content -->
-    <div>
-        <p>Our latest PHP job board client is for <a href="https://github.com/jobapis/jobs-adzuna" target="_blank" rel="external">Adzuna</a> a largely European job board with a private API for registered partners. You can <a href="https://developer.adzuna.com/admin" target="_blank" rel="external">register to use Adzuna’s API here</a>, and get started using this API client by including the package in your project’s composer file:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-adzuna</div></pre></td></tr></table></figure>
-<p>As with all <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common</a> providers, you just need to create a Query:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\AdzunaQuery([</div><div class="line">    <span class="string">'what'</span> =&gt; <span class="string">'engineering'</span>,</div><div class="line">    <span class="string">'where'</span> =&gt; <span class="string">'London, UK'</span>,</div><div class="line">    <span class="string">'page'</span> =&gt; <span class="string">'1'</span>,</div><div class="line">    <span class="string">'app_id'</span> =&gt; YOUR_APP_ID,</div><div class="line">    <span class="string">'app_key'</span> =&gt; YOUR_APP_KEY,</div><div class="line">]);</div></pre></td></tr></table></figure>
-<p>And inject it into the <code>AdzunaProvider</code>:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\AdzunaProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
-<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
-<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-adzuna#usage" target="_blank" rel="external">this project’s readme</a>, and as always, feel free to contact us if you’d like to get involved.</p>
 
 
         
