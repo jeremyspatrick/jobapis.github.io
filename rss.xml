@@ -81,9 +81,9 @@
     
       <category term="clients" scheme="https://jobapis.github.io/tags/clients/"/>
     
-      <category term="rss" scheme="https://jobapis.github.io/tags/rss/"/>
-    
       <category term="craigslist" scheme="https://jobapis.github.io/tags/craigslist/"/>
+    
+      <category term="rss" scheme="https://jobapis.github.io/tags/rss/"/>
     
   </entry>
   
@@ -357,9 +357,9 @@
     
       <category term="clients" scheme="https://jobapis.github.io/tags/clients/"/>
     
-      <category term="jobinventory" scheme="https://jobapis.github.io/tags/jobinventory/"/>
-    
       <category term="rss" scheme="https://jobapis.github.io/tags/rss/"/>
+    
+      <category term="jobinventory" scheme="https://jobapis.github.io/tags/jobinventory/"/>
     
   </entry>
   

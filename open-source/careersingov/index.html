@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="PHPJobs.com API Client"/>
+        <meta property="og:title" content="CareersInGovernment.com RSS API Client"/>
     
 
     <!--Open Graph Description-->
@@ -46,7 +46,7 @@
 
     <!-- Title -->
     
-    <title>PHPJobs.com API Client - JobApis</title>
+    <title>CareersInGovernment.com RSS API Client - JobApis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -152,7 +152,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>PHPJobs.com API Client</h1>
+                    <h1>CareersInGovernment.com RSS API Client</h1>
                     
                 </div>
             </div>
@@ -173,26 +173,23 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>Use the Jobs Common PHPJobs Provider to connect your PHP application with the PHPJobs RSS feed.</p>
+                <h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>Use the Jobs Common Careers in Government Provider to connect your PHP application with the job board’s RSS feed.</p>
 <ul>
-<li><a href="https://github.com/jobapis/jobs-phpjobs" target="_blank" rel="external">Github</a></li>
-<li><a href="https://packagist.org/packages/jobapis/jobs-phpjobs" target="_blank" rel="external">Packagist</a></li>
-<li><a href="http://www.phpjobs.com/" target="_blank" rel="external">PHPJobs.com</a></li>
+<li><a href="https://github.com/jobapis/jobs-careersingov" target="_blank" rel="external">Github</a></li>
+<li><a href="https://packagist.org/packages/jobapis/jobs-careersingov" target="_blank" rel="external">Packagist</a></li>
+<li><a href="https://careersingovernment.com/" target="_blank" rel="external">CareersInGovernment.com</a></li>
 </ul>
 <h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>To install, use composer:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-phpjobs</div></pre></td></tr></table></figure>
-<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>Create a Query object and add all the parameters you’d like via the constructor.</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Add parameters to the query via the constructor</span></div><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\PhpjobsQuery();</div></pre></td></tr></table></figure>
-<p>Or via the “set” method. All of the parameters documented in Indeed’s documentation can be added.</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Add parameters via the set() method</span></div><div class="line">$query-&gt;set(<span class="string">'search_string'</span>, <span class="string">'zend'</span>);</div></pre></td></tr></table></figure>
-<p>You can even chain them if you’d like.</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Add parameters via the set() method</span></div><div class="line">$query-&gt;set(<span class="string">'country_code'</span>, <span class="string">'us'</span>)</div><div class="line">    -&gt;set(<span class="string">'search_string'</span>, <span class="string">'laravel'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-careersingov</div></pre></td></tr></table></figure>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>Careers in Government provides no search parameters, just a feed of all their latest jobs via RSS.</p>
+<p>In order to grab jobs, first create a query object:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Instantiate the query object</span></div><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\CareersInGovQuery();</div></pre></td></tr></table></figure>
 <p>Then inject the query object into the provider.</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Instantiating a provider with a query object</span></div><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\PhpjobsProvider($query);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Instantiating a provider with a query object</span></div><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\CareersInGovProvider($query);</div></pre></td></tr></table></figure>
 <p>And call the “getJobs” method to retrieve results.</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Get a Collection of Jobs</span></div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
 <p>The <code>getJobs</code> method will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
-<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-phpjobs#usage" target="_blank" rel="external">this project’s readme</a></p>
+<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-careersingov#usage" target="_blank" rel="external">this project’s readme</a></p>
 
 
                 
