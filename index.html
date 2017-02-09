@@ -166,6 +166,36 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
                 <div class="post-preview">
+    <a href="/2017/02/09/careers-in-gov-goremote-clients/">
+        <h2 class="post-title">
+            Careers in Government and GoRemote RSS Clients Released
+        </h2>
+        
+    </a>
+    <p class="post-meta">
+        <!-- Date and Author -->
+        
+        2017-02-09
+    </p>
+    <!-- Post Main Content -->
+    <div>
+        <p>This month, we released two new job board clients: <a href="https://careersingovernment.com/" target="_blank" rel="external">CareersInGovernment.com</a> (<a href="https://github.com/jobapis/jobs-careersingov" target="_blank" rel="external">Github</a>) and <a href="https://goremote.io/" target="_blank" rel="external">GoRemote.io</a> (<a href="https://github.com/jobapis/jobs-goremote" target="_blank" rel="external">Github</a>). Both of these clients use RSS feeds to get the latest job listings.</p>
+<p>Usage for each is pretty simple as there are no parameters that can be injected in the Query Objects.</p>
+<h3 id="Careers-in-Government"><a href="#Careers-in-Government" class="headerlink" title="Careers in Government"></a><a href="https://github.com/jobapis/jobs-careersingov" target="_blank" rel="external">Careers in Government</a></h3><p>Install <a href="https://packagist.org/packages/jobapis/jobs-careersingov" target="_blank" rel="external">the package</a> with Composer, and require the vendor file in your project. After the package is installed, you can get the latest listings in a couple lines of code:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> CareersInGovProvider(<span class="keyword">new</span> CareersInGovQuery());</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>For more detailed documentation see this <a href="https://github.com/jobapis/jobs-careersingov/blob/master/README.md" target="_blank" rel="external">project’s readme file</a>.</p>
+<h3 id="GoRemote"><a href="#GoRemote" class="headerlink" title="GoRemote"></a><a href="https://github.com/jobapis/jobs-goremote" target="_blank" rel="external">GoRemote</a></h3><p>Install <a href="https://packagist.org/packages/jobapis/jobs-goremote" target="_blank" rel="external">the package</a> with Composer, and require the vendor file in your project. After the package is installed, you can get the latest listings in a couple lines of code:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> GoRemoteProvider(<span class="keyword">new</span> GoRemoteQuery());</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>For more detailed documentation see this <a href="https://github.com/jobapis/jobs-goremote/blob/master/README.md" target="_blank" rel="external">project’s readme file</a>.</p>
+
+
+        
+    </div>
+</div>
+<hr>
+
+            
+                <div class="post-preview">
     <a href="/2017/01/17/phpjobs-com/">
         <h2 class="post-title">
             PHPJobs.com RSS Client Released
@@ -445,36 +475,6 @@
 </ul>
 <h2 id="Filtering-recruiter-posts"><a href="#Filtering-recruiter-posts" class="headerlink" title="Filtering recruiter posts"></a>Filtering recruiter posts</h2><p>This feature has been requested by several of our users who are recruiters, but it takes more work to maintain than the basic functionality of JobsToMail. We are still building a list of recruiting firms and improving the filtering mechanism, so expect this feature to improve greatly, and we’re looking for testers in new locations.</p>
 <p>If you’d like to try out the recruiter filter, please email <a href="mailto:upgrade@jobstomail.com" target="_blank" rel="external">upgrade@jobstomail.com</a>.</p>
-
-
-        
-    </div>
-</div>
-<hr>
-
-            
-                <div class="post-preview">
-    <a href="/2016/10/29/jobinventory/">
-        <h2 class="post-title">
-            Jobinventory RSS Feed Provider Released
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-10-29
-    </p>
-    <!-- Post Main Content -->
-    <div>
-        <p>While most of the job board clients supported by <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common</a> are for job boards with full-service APIs, Jobinventory only provides an XML RSS feed for consumption. Today we released our first version of the PHP RSS client for Jobinventory, and you can download it <a href="https://github.com/jobapis/jobs-jobinventory" target="_blank" rel="external">here on Github</a>.</p>
-<p>Use of the Jobinventory provider follows much the same pattern as our other job board providers.</p>
-<p>First, create a Query object:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\JobinventoryQuery([</div><div class="line">    <span class="string">'q'</span> =&gt; <span class="string">'engineering'</span>,</div><div class="line">    <span class="string">'l'</span> =&gt; <span class="string">'Chicago, IL'</span>,</div><div class="line">    <span class="string">'limit'</span> =&gt; <span class="string">'100'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure></p>
-<p><em>For a full list of supported query options, <a href="https://github.com/jobapis/jobs-jobinventory/blob/master/src/Queries/JobinventoryQuery.php" target="_blank" rel="external">see this file</a>.</em></p>
-<p>And inject it into the <code>JobinventoryProvider</code>:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Provider\JobinventoryProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
-<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
-<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-jobinventory#usage" target="_blank" rel="external">this project’s readme</a>, and as always, feel free to contact us if you have any questions or comments.</p>
 
 
         
