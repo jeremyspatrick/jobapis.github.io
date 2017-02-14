@@ -5,7 +5,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="https://jobapis.github.io/"/>
-  <updated>2017-02-09T13:40:40.000Z</updated>
+  <updated>2017-02-14T19:10:52.000Z</updated>
   <id>https://jobapis.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jobs2Careers Job Board Api Client v.2 Released</title>
+    <link href="https://jobapis.github.io/2017/02/14/j2c-api-client/"/>
+    <id>https://jobapis.github.io/2017/02/14/j2c-api-client/</id>
+    <published>2017-02-14T18:13:55.000Z</published>
+    <updated>2017-02-14T19:10:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Jobs2Careers support has been on hold since last year’s release of Jobs Common v2. Thanks to some help from <a href="https://github.com/arbet" target="_blank" rel="external">Samer Bechara</a> we have gotten the package up and running again. It is now supported by <a href="https://github.com/jobapis/jobs-multi" target="_blank" rel="external">Jobs Multi as well</a>.</p>
+<p>Get started using this API client by including the package in your project’s composer file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">composer require jobapis/jobs-jobs2careers</div></pre></td></tr></table></figure>
+<p>As with all <a href="https://github.com/jobapis/jobs-common" target="_blank" rel="external">Jobs Common</a> providers, you first need to create a Query:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$query = <span class="keyword">new</span> JobApis\Jobs\Client\Queries\J2cQuery([</div><div class="line">    <span class="string">'id'</span> =&gt; YOUR_PUBLISHER_ID,</div><div class="line">    <span class="string">'pass'</span> =&gt; YOUR_PUBLISHER_PASSWORD,</div><div class="line">    <span class="string">'q'</span> =&gt; <span class="string">'engineer'</span>,</div><div class="line">    <span class="string">'l'</span> =&gt; <span class="string">'Chicago, IL'</span>,</div><div class="line">]);</div></pre></td></tr></table></figure>
+<p>And inject it into the <code>J2cProvider</code>:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$client = <span class="keyword">new</span> JobApis\Jobs\Client\Providers\J2cProvider($query);</div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>This will return a <a href="https://github.com/jobapis/jobs-common/blob/master/src/Collection.php" target="_blank" rel="external">Collection</a> of <a href="https://github.com/jobapis/jobs-common/blob/master/src/Job.php" target="_blank" rel="external">Job</a> objects.</p>
+<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-jobs2careers#usage" target="_blank" rel="external">this project’s readme</a>, and as always, feel free to contact us if you’d like to get involved.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Jobs2Careers support has been on hold since last year’s release of Jobs Common v2. Thanks to some help from &lt;a href=&quot;https://github.com/a
+    
+    </summary>
+    
+    
+      <category term="releases" scheme="https://jobapis.github.io/tags/releases/"/>
+    
+      <category term="clients" scheme="https://jobapis.github.io/tags/clients/"/>
+    
+      <category term="jobs2careers" scheme="https://jobapis.github.io/tags/jobs2careers/"/>
+    
+  </entry>
   
   <entry>
     <title>Careers in Government and GoRemote RSS Clients Released</title>
@@ -322,46 +355,6 @@
       <category term="clients" scheme="https://jobapis.github.io/tags/clients/"/>
     
       <category term="careerjet" scheme="https://jobapis.github.io/tags/careerjet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JobsToMail User Login and Filtering Recruiter Listings</title>
-    <link href="https://jobapis.github.io/2016/11/01/jobs-to-mail-login/"/>
-    <id>https://jobapis.github.io/2016/11/01/jobs-to-mail-login/</id>
-    <published>2016-11-02T02:01:56.000Z</published>
-    <updated>2016-11-02T02:39:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Tonight we released a basic token-based user login functionality on <a href="https://www.jobstomail.com/" target="_blank" rel="external">JobsToMail</a> which allows users to log in and see their current searches as well as add new ones to their user account. We also released our first premium feature that allows users to filter out recruiters. This feature is currently only open to users who request access by emailing <a href="mailto:upgrade@jobstomail.com" target="_blank" rel="external">upgrade@jobstomail.com</a>.</p>
-<p>Both of thesse features are among several that will go into the <a href="https://github.com/jobapis/jobs-to-mail/milestone/1" target="_blank" rel="external">version 1.0 release of JobsToMail</a> expected sometime in the beginning of 2017. More details on each feature are below.</p>
-<h2 id="Token-based-user-login"><a href="#Token-based-user-login" class="headerlink" title="Token-based user login"></a>Token-based user login</h2><p>Token-based logins (also known as “passwordless” logins) have trade-offs. On one hand, they can be more secure and help ensure that users don’t share accounts or use weak passwords. On the other hand, they are slightly more difficult to use, although that point is arguable. With passwordless logins, a user does not have to remember or type a password, but she does have to have access to her email address. <a href="http://notes.xoxco.com/post/27999787765/is-it-time-for-password-less-login" target="_blank" rel="external">Here’s a good blog post on the reasons for going passwordless</a>.</p>
-<h3 id="How-it-works"><a href="#How-it-works" class="headerlink" title="How it works"></a>How it works</h3><p>The basic flow for our token-based login is as follows:</p>
-<h4 id="1-Click-Login-and-enter-email"><a href="#1-Click-Login-and-enter-email" class="headerlink" title="1. Click Login and enter email"></a>1. Click <code>Login</code> and enter email</h4><p><img src="/images/email.png" alt="Login with email"></p>
-<h4 id="2-Check-email-account-for-the-token"><a href="#2-Check-email-account-for-the-token" class="headerlink" title="2. Check email account for the token"></a>2. Check email account for the token</h4><p>It may take a few seconds for the email to reach you.</p>
-<h4 id="3-Enter-your-token-OR-click-the-link-in-the-email"><a href="#3-Enter-your-token-OR-click-the-link-in-the-email" class="headerlink" title="3. Enter your token OR click the link in the email"></a>3. Enter your token OR click the link in the email</h4><p><img src="/images/token.png" alt="Login with email"></p>
-<h4 id="4-You-will-be-immediately-logged-in"><a href="#4-You-will-be-immediately-logged-in" class="headerlink" title="4. You will be immediately logged in"></a>4. You will be immediately logged in</h4><p><img src="/images/logged-in.png" alt="Login with email"></p>
-<h3 id="Notes-about-token-based-login-on-JobsToMail-com"><a href="#Notes-about-token-based-login-on-JobsToMail-com" class="headerlink" title="Notes about token-based login on JobsToMail.com"></a>Notes about token-based login on JobsToMail.com</h3><ul>
-<li>Our tokens expire in 7 days. If you don’t use the token by that time you will have to generate a new one to log in.</li>
-<li>Tokens are only good for <strong>one time use</strong>. This means you can’t share your token with others.</li>
-<li>Tokens use the same construct as the confirmation links we send when new users sign up. This means that new users when confirmed are automatically logged in so they can explore their searches immediately.</li>
-<li>If you have any issues, feel free to report them on <a href="https://github.com/jobapis/jobs-to-mail/issues" target="_blank" rel="external">github</a> or <a href="mailto:khughes.me@gmail.com" target="_blank" rel="external">email me directly</a>.</li>
-</ul>
-<h2 id="Filtering-recruiter-posts"><a href="#Filtering-recruiter-posts" class="headerlink" title="Filtering recruiter posts"></a>Filtering recruiter posts</h2><p>This feature has been requested by several of our users who are recruiters, but it takes more work to maintain than the basic functionality of JobsToMail. We are still building a list of recruiting firms and improving the filtering mechanism, so expect this feature to improve greatly, and we’re looking for testers in new locations.</p>
-<p>If you’d like to try out the recruiter filter, please email <a href="mailto:upgrade@jobstomail.com" target="_blank" rel="external">upgrade@jobstomail.com</a>.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Tonight we released a basic token-based user login functionality on &lt;a href=&quot;https://www.jobstomail.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;
-    
-    </summary>
-    
-    
-      <category term="releases" scheme="https://jobapis.github.io/tags/releases/"/>
-    
-      <category term="announcements" scheme="https://jobapis.github.io/tags/announcements/"/>
-    
-      <category term="jobs-to-mail" scheme="https://jobapis.github.io/tags/jobs-to-mail/"/>
     
   </entry>
   

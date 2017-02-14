@@ -176,13 +176,13 @@
                 <h2 id="Project-Overview"><a href="#Project-Overview" class="headerlink" title="Project Overview"></a>Project Overview</h2><p>Use the Jobs Common Jobs2Careers Provider to connect your PHP application with the Jobs2Careers job board API.</p>
 <ul>
 <li><a href="https://github.com/jobapis/jobs-jobs2careers" target="_blank" rel="external">Github</a></li>
-<li><a href="https://packagist.org/packages/JobBrander/jobs-jobs2careers" target="_blank" rel="external">Packagist</a></li>
+<li><a href="https://packagist.org/packages/jobapis/jobs-jobs2careers" target="_blank" rel="external">Packagist</a></li>
 <li><a href="http://www.jobs2careers.com/publisher_services.php" target="_blank" rel="external">API Docs</a></li>
 </ul>
-<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>Use composer: <code>composer require jobbrander/jobs-jobs2careers</code></p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>Use composer: <code>composer require jobapis/jobs-jobs2careers</code></p>
 <h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>Get the latest project manager jobs in Chicago:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$client = new JobBrander\Jobs\Client\Providers\J2c([</div><div class="line">    &apos;id&apos; =&gt; &apos;Jobs2Careers Partner ID&apos;,</div><div class="line">    &apos;pass&apos; =&gt; &apos;Jobs2Careers Password&apos;</div><div class="line">]);</div><div class="line"></div><div class="line">$jobs = $client-&gt;setKeyword(&apos;project manager&apos;)</div><div class="line">    -&gt;setLocation(&apos;Chicago, IL&apos;)</div><div class="line">    -&gt;getJobs();</div></pre></td></tr></table></figure>
-<p>For more detailed usage and documentation, see <a href="https://github.com/JobBrander/jobs-jobs2careers#usage" target="_blank" rel="external">this project’s readme</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$query = new JobApis\Jobs\Client\Queries\J2cQuery([</div><div class="line">    &apos;id&apos; =&gt; &apos;Jobs2Careers Partner ID&apos;,</div><div class="line">    &apos;pass&apos; =&gt; &apos;Jobs2Careers Password&apos;,</div><div class="line">    &apos;q&apos; =&gt; &apos;project manager&apos;,</div><div class="line">    &apos;l&apos; =&gt; &apos;Chicago, IL&apos;,</div><div class="line">]);</div><div class="line"></div><div class="line">$client = new JobApis\Jobs\Client\Providers\J2cProvider($query);</div><div class="line"></div><div class="line">$jobs = $client-&gt;getJobs();</div></pre></td></tr></table></figure>
+<p>For more detailed usage and documentation, see <a href="https://github.com/jobapis/jobs-jobs2careers#usage" target="_blank" rel="external">this project’s readme</a></p>
 
 
                 
